@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
+import { PlanetCard } from "../../assets/styles/PlanetStyles";
 
 interface Props {
   todos: Todo[];
@@ -14,6 +15,10 @@ const TodoListContainer = styled.div`
 `;
 
 const TodoList: React.FC<Props> = ({ todos, onDelete, onToggle }) => {
+  if (todos.length === 0) {
+    return <PlanetCard>No todos empty, please create todo ☝🏻</PlanetCard>;
+  }
+
   return (
     <TodoListContainer>
       {todos.map((todo) => (
