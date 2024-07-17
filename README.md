@@ -1,3 +1,49 @@
+- ## 🧑🏻‍💻 How To Run Project
+
+### Prerequisites
+
+Before you begin, ensure you have Node.js and npm installed on your machine.
+
+### Installation
+
+Clone the repository from Github:
+
+```bash
+git clone https://github.com/anasshofyan/todo-list-app.git
+```
+
+Navigate into the project directory:
+
+```bash
+cd solar-system
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Available Scripts
+
+In the project directory, you can run the following scripts:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
+
+The page will automatically reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.
+
+### `npm run eject`
+
+**Warning:** This is a one-way operation. Ejecting gives you full control over the configuration files and dependencies.
+
 - ## 🧑🏻‍💻 ReactJS #[[Technical Test]] - Dinas PPAPP Pemprov DKI Jakarta
 
   - ### Pengetahuan Dasar
