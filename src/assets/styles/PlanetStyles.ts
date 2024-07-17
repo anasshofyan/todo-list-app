@@ -41,8 +41,8 @@ export const PlanetCard = styled.div`
 export const ActionButton = styled.button`
   border: 0.5px solid rgba(255, 255, 255, 0.6);
   color: white;
-  height: 40px;
-  width: 120px;
+  height: 36px;
+  width: 140px;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;

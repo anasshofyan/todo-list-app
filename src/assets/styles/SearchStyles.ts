@@ -19,7 +19,7 @@ export const InputGroup = styled.div`
   align-items: center;
 `;
 
-export const SearchInput = styled.input`
+export const TodoInput = styled.input`
   flex: 1;
   border: 0.5px solid rgba(255, 255, 255, 0.6);
   border-radius: 0.25rem;

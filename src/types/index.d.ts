@@ -19,3 +19,13 @@ interface Planet {
   created: Date;
   url: string;
 }
+
+interface Props {
+  addTodo: (text: string) => void;
+}
+
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
