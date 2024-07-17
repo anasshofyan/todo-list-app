@@ -3,7 +3,7 @@ import React from "react";
 import { Form, InputGroup, TodoInput } from "../../assets/styles/SearchStyles";
 import { ActionButton } from "../../assets/styles/PlanetStyles";
 
-const TodoForm: React.FC<Props> = ({ addTodo }) => {
+const TodoForm: React.FC<TodoForm> = ({ addTodo }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const text = e.currentTarget.todo.value.trim();

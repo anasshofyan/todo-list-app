@@ -20,7 +20,13 @@ interface Planet {
   url: string;
 }
 
-interface Props {
+interface ItemProps {
+  todo: Todo;
+  onDelete: (id: number) => void;
+  onToggle: (id: number) => void;
+}
+
+interface TodoForm {
   addTodo: (text: string) => void;
 }
 

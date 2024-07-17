@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ContainerStyle from "../assets/styles/ContainerStyles";
 import Title from "../components/Planet/Title";
-import { ActionButton } from "../assets/styles/PlanetStyles";
-import { useNavigate } from "react-router-dom";
+// import { ActionButton } from "../assets/styles/PlanetStyles";
+// import { useNavigate } from "react-router-dom";
 import TodoList from "../components/Todo/TodoList";
 import TodoForm from "../components/Todo/TodoForm";
 
 const TodoPage: React.FC = () => {
-  const nav = useNavigate();
+  // const nav = useNavigate();
 
   const [todos, setTodos] = useState<Todo[]>(() => {
     const storedTodos = localStorage.getItem("todos");
@@ -42,10 +42,12 @@ const TodoPage: React.FC = () => {
   return (
     <>
       <ContainerStyle>
-        <Title>To Do List 📝</Title>
-        <ActionButton onClick={() => nav("/")}>Eclipse List 🌍</ActionButton>
-        <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleTodo} />
+        <ContainerStyle width="50%">
+          <Title>To Do List 📝</Title>
+          {/* <ActionButton onClick={() => nav("/")}>Eclipse List 🌍</ActionButton> */}
+          <TodoForm addTodo={addTodo} />
+          <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleTodo} />
+        </ContainerStyle>
       </ContainerStyle>
     </>
   );
