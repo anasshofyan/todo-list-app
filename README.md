@@ -1,4 +1,5 @@
 - ## 🧑🏻‍💻 ReactJS #[[Technical Test]] - Dinas PPAPP Pemprov DKI Jakarta
+
   - ### Pengetahuan Dasar
     - #### 1. Apa itu React dan apa perbedaan utamanya dengan framework JavaScript lainnya seperti Angular atau Vue?
       collapsed:: true
@@ -29,10 +30,14 @@
           - Dengan mengurangi proses operasi pada DOM, virtual DOM membuat update yang lebih cepat dan efisian
           - Dengan hanya memperbarui elemen yang berubah saja, vierual DOM akan meminimalkan update yang tidak perlu, sehingga itu sangat berguna pada aplikasi UI yang kompleks
   - ### Pemahaman Komponen
+
     - #### 3. Apa itu komponen dalam React? Jelaskan perbedaan antara komponen fungsional dan komponen kelas.
+
       - #### Answer
+
         - Components adalah sebuah blok atau susunan yang bisa membentuk sebuah UI pada react
         - Perbedaaan Function Components dan Class Components
+
           - Function Components adalah komponent yang difefinisikan sebagai fungsi pada js, dan bisa menerima parameter berupa props dan mengembalikan sebuah elemen pada react.
             - Pada function components untuk state dan Lifecycle, menggunakan hook seperti `useState` (untuk menyimpan state), `useEffect` (untuk menjalankan atau pertama kali di render atau ada update state akan berfungsi)
             - ```jsx
@@ -41,6 +46,7 @@
               }
               ```
           - Class Components adalah komponen yang difenisikan sebagai kelas js yang memperluaas `React.Component` dan harus memiliki method `render` untuk return element react
+
             - State dan Lifecycle nya memiliki state internal yang di inisialisasi dalam constructor dan bisa mengakses method seperti `componentDidMount`, dan `componentDidUpdate`, dan `componentWillUnmount`.
             - ```jsx
               class ClassComponents extends React.Component {
@@ -54,13 +60,20 @@
                 }
               }
               ```
+
           -
+
         -
+
     - #### 4. Bagaimana cara membuat komponen stateless dan stateful dalam React? Berikan contoh kode sederhana.
+
       collapsed:: true
+
       - #### Answer
+
         - Statless
           collapsed:: true
+
           - ```jsx
             function Profile(props) {
               return (
@@ -72,8 +85,10 @@
 
             <Profile name="Anas SMF" title="Frontend Dev" />;
             ```
+
         - Statefull
           collapsed:: true
+
           - ```jsx
             function CounterIncrement() {
               const [count, setCount] = useState(0);
@@ -90,20 +105,29 @@
               );
             }
             ```
+
         -
+
     - #### 5. Jelaskan konsep props dan state dalam React. Apa perbedaan utama antara keduanya?
       collapsed:: true
       - #### Answer
         - Props (properties), sebuah object atau sebuah fungsi yang berisi sebuah data yang diteruskan dari component parent ke components child
         - State adalah obejct yang digunakan untuk menyimpan data yang dimiliki dan bisa diatur oleh components itu sendiri.
+
   - ### State Management
+
     collapsed:: true
+
     - #### 6. Apa itu state lifting dan kapan Anda perlu menggunakannya?
+
       collapsed:: true
+
       - #### Answer
+
         - State lifiting adalah konsep dalam react yang dimana state yang dibutuhkan oleh beberapa komponent child itu di pindahkan (diangkat) ke komponent parent bersama component itu, kemudian component parent itu yang kemudian mengelola state dan meneruskan data serta fungsi oleh komponent chuld melalui props.
         - Contoh
           collapsed:: true
+
           - ```jsx
             function TextField({ value, onChange }) {
               return (
@@ -132,20 +156,28 @@
               );
             }
             ```
+
         - Penggunaanya jika ada beberapa compinent perlu berbagi atau menyingkronkan state yang sama. dan memastikan konsistensi data seluruh komponent yang membutuhkannya.
+
     - #### 7. Apa itu Context API dalam React dan kapan sebaiknya digunakan?
       - #### Answer
         - Context API adalah sebuah mekanisme untuk berbagi data antar komponen tanpa harus melewati props secara manual (props drilling) pada setiap tingkat komponen. Digunakan ketika ada banyak komponent yang memerlukan akses data yang sama dan menghindari props drilling, konsep nya mirip dengan state management
     - #### 8. Jelaskan bagaimana Redux bekerja dan bagaimana ia dapat digunakan dalam aplikasi React. Berikan contoh singkat pengaturan Redux store.
+
       collapsed:: true
+
       - #### Answer
+
         collapsed:: true
+
         - Redux adalah library state management, sering digunakan pada React. Redux menyediakan cara untuk mengelola state secara global dalam sebuah store yang terpusat, cocok untuk aplikasi yang sangat kompleks.
+
           - Cara kerja redux
             - Seluruh state app disimpan dalam satu object js, yang biasa disebut sebagai store, sehingga membuat state mudah diakses
             - State hanya bisa diubah dengan mengirimkan `action` yang mendeskripsikan perubahan yang diinginkan. Action adalah objkect yang memiliki props `type`, dan `payload`
             - Untuk menentukan state yang harus diubah terhahdap action, maka redux menggunakan `reducer` yaitu fungsu untuk mengambil state sebelelumnya dan action sebagai argumen, dan return state baru.
           - ## Contoh
+
             ```jsx
             /// store.js
             import { createStore } from "redux";
@@ -155,6 +187,7 @@
 
             export default store;
             ```
+
             - ```jsx
               /// reducers.js
               const initialState = {
@@ -180,6 +213,7 @@
 
               export default counterReducer;
               ```
+
             - ```jsx
               /// actions.js
               export const increment = () => ({
@@ -190,6 +224,7 @@
                 type: "DECREMENT",
               });
               ```
+
             - ```jsx
               ///app.js / main.js
               import React from "react";
@@ -205,6 +240,7 @@
                 document.getElementById("root"),
               );
               ```
+
             - ```jsx
               /// home.js
               import React from "react";
@@ -230,8 +266,11 @@
 
               export default Home;
               ```
+
   - ### Lifecycle Methods
+
     collapsed:: true
+
     - #### 9. Sebutkan beberapa lifecycle methods dalam React class components dan jelaskan kapan masing-masing dipanggil.
       - #### Answer
         - `constructor(props)` dipanggil saat component dibuat pertama kali, dan untuk inisialisasi state
@@ -239,8 +278,11 @@
         - `componentDidUpdate(prevProps, prevState)` dipanggil setelah component di perbarui, dan digunakan untuk menangani perubahan bedasarkan props atau state baru
         - `componentWillUnmount` dipanggil sebelum komponent dihapus oleh DOM, biasanya digunakan untuk membersihkan event listener dan mengnentikan proess async
     - #### 10. Bagaimana cara menggunakan hooks seperti useEffect untuk mensimulasikan lifecycle methods dalam functional components? Berikan contoh.
+
       - #### Answer
+
         ## collapsed:: true
+
         ```jsx
         useEffect(() => {
           // componentDidMount
@@ -249,6 +291,7 @@
             .then((data) => setData(data));
         }, []);
         ```
+
         - ```jsx
           useEffect(() => {
             // componentDidUpdate
@@ -267,19 +310,26 @@
             return () => clearInterval(interval);
           }, []);
           ```
+
   - ### Routing
     collapsed:: true
     - #### 11. Bagaimana cara mengimplementasikan routing dalam aplikasi React menggunakan react-router
       dom? Jelaskan dan berikan contoh.
     - #### 12. Bagaimana cara menangani protected routes dalam React?
   - ### Forms dan Validasi
+
     collapsed:: true
+
     - #### 13. Bagaimana cara mengelola form input dalam React? Berikan contoh penggunaan controlled components.
+
       collapsed:: true
+
       - #### Answer
+
         - pertama saya membuat state untuk menyimpan data input
         - membuat fungsi handleCnagne untuk memasukan data kedalam state
         - ## membuat fungsi handleSubmit untuk mengirimkan data seluruhnya ke endpoint
+
           ```jsx
           import React, { useState } from "react";
 
@@ -342,9 +392,13 @@
 
           export default RegisterForm;
           ```
+
     - #### 14. Bagaimana cara melakukan validasi form dalam React? Berikan contoh penggunaan library seperti Formik atau React Hook Form.
+
       collapsed:: true
+
       - #### Answer
+
         - disini saya menggunakan Formik
         - ```jsx
           import React from "react";
@@ -406,11 +460,17 @@
 
           export default RegisterForm;
           ```
+
   - ### Integrasi dengan Backend
+
     collapsed:: true
+
     - #### 15. Bagaimana cara melakukan fetch data dari API dalam React? Jelaskan dengan contoh menggunakan fetch atau axios.
+
       - #### Answer
+
         ## collapsed:: true
+
         ```jsx
         import React, { useState, useEffect } from "react";
 
@@ -458,8 +518,11 @@
 
         export default FetchAPI;
         ```
+
     - #### 16. Bagaimana cara mengelola state global untuk data yang diambil dari API?
+
       - #### Answer
+
         - Disini saya menggunakan context untuk menyimpan result dari endpoint
         - ```jsx
           // DataContsxt.js
@@ -510,12 +573,19 @@
           // tinggal import saja di component yang akan digunakan utnik menampilkan data, dan bisa diakses secara global
           const { data, loading } = useDataContext();
           ```
+
   - ### Optimisasi dan Best Practices
+
     collapsed:: true
+
     - #### 17. Apa itu code splitting dan bagaimana cara menerapkannya dalam aplikasi React?
+
       collapsed:: true
+
       - #### Answer
+
         - ## Code spiliting adalah teknik untuk memisahkan code app menjadi bagian-bagian yang lebih kecil, dan kemudian bisa di load secara terpisah-pisah sesuai dengan kebutuhan, tujuannya adalah untuk meningkatkan perofma dan mempercepat waktu render.
+
           ```jsx
           import React, { useState } from "react";
 
@@ -542,11 +612,17 @@
 
           // prosesnya ketika pertama kali di render, ProfileCompinent tidak ikut dirender, ketika di klik maka akan dirender, itu akan mempercepat proses rendering dan performa aplikasi
           ```
+
     - #### 18. Jelaskan cara mengoptimalkan performa aplikasi React, misalnya dengan memoization atau penggunaan React.memo.
+
       collapsed:: true
+
       - #### Answer
+
         collapsed:: true
+
         - ## Memoization adalah teknik untuk menyimpan hasil dari proses calculate computed (seperti penghitungan berulang atau pemanggilan API) sehingga hasilnya dapat di-cache dan digunakan kembali saat input tidak berubah.
+
           ```jsx
           import React, { useState, useMemo } from "react";
 
@@ -575,11 +651,16 @@
 
           export default ExpenseComponent;
           ```
+
     - #### 19. Apa itu lazy loading dan bagaimana cara menggunakannya dalam React? Berikan contoh.
+
       collapsed:: true
+
       - #### Answer
+
         - Lazy loading adalah teknik di mana komponen atau asset aplikasi dimuat secara dinamis hanya saat dibutuhkan, seperti code spliting. Hal ini membantu mengurangi waktu load awal aplikasi dengan memuat hanya bagian-bagian yang diperlukan saat user mengaksesnya, daripada memuat semuanya sekaligus.
           collapsed:: true
+
           - ```jsx
             import React, { Suspense } from "react";
 
@@ -599,6 +680,7 @@
 
             export default App;
             ```
+
   - ### Tes Koding Praktis
     collapsed:: true
     - #### 20. Berikan tugas untuk membuat aplikasi to-do list sederhana dengan fitur tambah, hapus, dan tandai sebagai selesai.
@@ -611,12 +693,18 @@
         - Link [Planet | List Eclipse (todo-list-app-ten-snowy.vercel.app)](https://todo-list-app-ten-snowy.vercel.app/)
         - Link Github [General (github.com)](https://github.com/anasshofyan/todo-list-app/settings)
   - ### Pertanyaan Problem Solving
+
     collapsed:: true
+
     - #### 22. Bagaimana Anda akan menangani kasus dimana sebuah komponen perlu mengakses data dari beberapa sumber sekaligus?
+
       collapsed:: true
+
       - #### Answer
+
         - Ketika ada case seperti itu, dan jika komponen perlu load data dari beberapa endpoint sekaligus tetapi tidak tergantung satu sama lain, saya menggunakan `useEffect` untuk memanggil fungsi pemanggilan API secara paralel.
-        - ## Kemudian saya menggunakan `Promise.all` untuk memanggil endpoint secara paralel, dan `useState` digunakan untuk menyimpan data
+        - #### Kemudian saya menggunakan `Promise.all` untuk memanggil endpoint secara paralel, dan `useState` digunakan untuk menyimpan data
+
           ```jsx
           const [data1, setData1] = useState(null);
           const [data2, setData2] = useState(null);
@@ -634,6 +722,7 @@
             fetchData();
           }, []);
           ```
+
     - #### 23. Apa yang akan Anda lakukan jika mendapati sebuah komponen yang terlalu besar dan sulit di-maintain? Bagaimana strategi Anda untuk memecah komponen tersebut?
       collapsed:: true
       - #### Answer
@@ -653,6 +742,7 @@
               - Dashboard Template
             - Page -> implementasi dari template
               - HomePage
+
   - ### Studi Kasus
     collapsed:: true
     - #### 24. Berikan sebuah studi kasus dimana Anda harus mengembangkan sebuah fitur baru dalam aplikasi React yang sudah ada. Bagaimana Anda akan merencanakan dan mengimplementasikan fitur tersebut?
