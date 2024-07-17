@@ -47,7 +47,6 @@ export const ActionButton = styled.button`
   border-radius: 8px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.3);
-  margin-left: 10px;
   backdrop-filter: blur(10px);
 
   &:hover {
@@ -92,4 +91,13 @@ export const EndMessage = styled.p`
 export const PlanetDetailRow = styled.div`
   margin-bottom: 8px;
   align-items: left;
+`;
+
+export const FlexRow = styled.div`
+  display: flex;
+  direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 `;

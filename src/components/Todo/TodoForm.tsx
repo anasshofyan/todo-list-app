@@ -1,7 +1,6 @@
 // src/components/TodoForm.tsx
 import React from "react";
 import { Form, InputGroup, TodoInput } from "../../assets/styles/SearchStyles";
-import { ActionButton } from "../../assets/styles/PlanetStyles";
 
 const TodoForm: React.FC<TodoForm> = ({ addTodo }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,9 +18,8 @@ const TodoForm: React.FC<TodoForm> = ({ addTodo }) => {
         <TodoInput
           type="text"
           name="todo"
-          placeholder="Tambahkan todo baru..."
+          placeholder="Tambahkan todo baru, (enter)..."
         />
-        <ActionButton type="submit">Tambah</ActionButton>
       </InputGroup>
     </Form>
   );
